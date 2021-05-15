@@ -280,6 +280,7 @@ textarea {
   font-family: "Lato", sans-serif;
   font-style: italic;
   border: none;
+  background: #e5e5e5;
   padding: 1rem 2rem;
   transition: all 0.3s ease;
 }

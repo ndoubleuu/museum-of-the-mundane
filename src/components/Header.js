@@ -8,7 +8,7 @@ const Header = () => {
                 <h1>Museum of the Mundane</h1>
             </div>
             <div className="wrapper image">
-                <img src={museum} alt="" />
+                <img src={museum} alt="Museum gallery exhibiting numerous framed paintings. Photo by Artur Matosyan, published in 2019." />
             </div>
         </header>
     )
