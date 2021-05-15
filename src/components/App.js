@@ -67,7 +67,7 @@ function App() {
           <Form handleMoment={handleUserInput} />
         </section>
 
-        <Gallery />
+        <Gallery momentsData={moments} />
 
       </main>
 
