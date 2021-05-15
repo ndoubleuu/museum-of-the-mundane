@@ -242,6 +242,15 @@ img {
   max-width: 100%;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 ul {
   list-style: none;
 }
@@ -291,6 +300,10 @@ textarea {
 }
 
 /* GALLERY */
+ul {
+  font-family: "Playfair Display", serif;
+}
+
 .delete-input {
   background: transparent;
   border: none;
@@ -304,4 +317,12 @@ textarea {
 .delete-input:hover {
   cursor: pointer;
   color: #cd5c5c;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.6rem;
+  padding: 2rem 0;
 }
