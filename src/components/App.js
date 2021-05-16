@@ -34,7 +34,7 @@ function App() {
         
         // Store the data in objects (with a key and the user's input value)
         let momentObject = { key: key, post: data[key] }
-        console.log(momentObject);
+        // console.log(momentObject);
 
         // Push the new objects to the database
         newDataArray.push(momentObject);  
@@ -53,8 +53,10 @@ function App() {
 
   // Define a function that will submit user's input to Firebase
   const handleSubmit = () => {
+    // Error handling- if nothing is submitted, alert the user
+    {userInput ? dbRef.push(userInput) : alert('not ok')}
     // Submit new post to the page
-    dbRef.push(userInput);
+    // dbRef.push(userInput);
     // Reset value input
     setUserInput("");
   }
