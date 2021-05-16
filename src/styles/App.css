@@ -94,6 +94,7 @@ html {
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -149,6 +150,7 @@ h2 {
   font-size: 2rem;
   margin-bottom: 0;
   letter-spacing: 0.3rem;
+  text-align: right;
 }
 
 h2:after {
@@ -159,7 +161,7 @@ h2:after {
 header a {
   font-size: 3.5rem;
   position: relative;
-  bottom: 2.5rem;
+  bottom: 3rem;
   transition: all 0.3s ease;
 }
 
@@ -217,6 +219,7 @@ form {
   padding: 30rem 3rem 3rem;
   border-bottom: 0.25rem solid #000;
   border-left: 0.1rem solid #000;
+  width: 66rem;
 }
 
 ::placeholder {
@@ -228,6 +231,7 @@ textarea {
   font-family: "Lato", sans-serif;
   padding: 2rem;
   border: 0.1rem solid #000;
+  width: 60rem;
 }
 
 .share-button {
@@ -307,7 +311,7 @@ footer {
   text-align: center;
   font-style: italic;
   font-size: 1.6rem;
-  padding: 8rem 0 1rem;
+  padding: 8rem 2rem 1rem;
 }
 
 /* MEDIA QUERIES */
@@ -319,12 +323,114 @@ footer {
   .description {
     position: absolute;
     padding-left: 5rem;
-    width: 50%;
+    width: 60%;
+  }
+  .form-container {
+    border-bottom: 0.25rem solid #000;
+    border-left: 0.1rem solid #000;
+  }
+  form {
+    padding-top: 35rem;
+    border: none;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 776px) {
+  ul {
+    justify-content: center;
+  }
+  li {
+    margin: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .top-container {
+    height: 22rem;
+  }
+  h1 {
+    font-size: 6.5rem;
+    line-height: 6rem;
+    width: 50rem;
+  }
+  header a {
+    font-size: 2.5rem;
+    bottom: 2.5rem;
+  }
+  .description {
+    width: 100%;
+  }
+  form {
+    padding-top: 32rem;
+    align-items: flex-start;
+  }
+  textarea {
+    width: 60%;
+    height: 15rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .top-container {
+    height: 19rem;
+  }
+  .title {
+    padding: 3rem 2rem 0 0;
+  }
+  h1 {
+    font-size: 5rem;
+    line-height: 4.5rem;
+    width: auto;
+  }
+  h2 {
+    letter-spacing: normal;
+  }
+  .description {
+    padding: 0 2rem;
   }
   form {
     padding-top: 35rem;
   }
 }
 
-@media (max-width: 880px) {
+@media (max-width: 420px) {
+  .top-container {
+    height: 22rem;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    width: 20rem;
+  }
+  form {
+    padding-top: 40rem;
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+  }
+  li {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 339px) {
+  .top-container {
+    height: 30rem;
+  }
+  form {
+    padding-top: 45rem;
+  }
+  textarea {
+    height: 20rem;
+  }
+  li {
+    padding: 6rem;
+  }
+  .delete-input {
+    top: 8.5rem;
+    right: 4.5rem;
+  }
 }

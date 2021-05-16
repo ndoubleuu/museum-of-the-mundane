@@ -12,7 +12,10 @@ const Header = () => {
                     <h1>Museum of the <span>Mundane</span></h1>
                     <h2>A community-curated collection</h2>
                 </div>
-                <a href="#share"><FontAwesomeIcon icon={faCaretDown} className="arrow-down" /></a>
+                <a href="#share">
+                    <span className="sr-only">Scroll down to post submission form.</span>
+                    <FontAwesomeIcon icon={faCaretDown} className="arrow-down" aria-hidden="true"/>
+                </a>
             </div>
             <div className="wrapper image">
                 <img src={museum} alt="Museum gallery exhibiting numerous framed paintings. Photographed by Artur Matosyan, published 2019." />

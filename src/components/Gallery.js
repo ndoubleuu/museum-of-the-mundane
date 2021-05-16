@@ -27,7 +27,7 @@ const Gallery = (props) => {
                             removePost(moment.key);
                         }}>
                             <span className="sr-only">Delete post</span>
-                            <FontAwesomeIcon icon={faTimesCircle} />
+                            <FontAwesomeIcon icon={faTimesCircle} aria-hidden="true" />
                         </button>
                     </li>  
                 )

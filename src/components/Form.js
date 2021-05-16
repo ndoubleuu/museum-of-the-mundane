@@ -13,8 +13,6 @@ const Form = (props) => {
                     id="input" 
                     name="input" 
                     maxLength="100" 
-                    rows="1" 
-                    cols="60" 
                     placeholder="What made you smile today?" 
                     onChange={handleMoment}
                     value={userInputValue}>
