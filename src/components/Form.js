@@ -15,6 +15,7 @@ const Form = ({ handleMoment, userInputValue, submitPost }) => {
                 onChange={handleMoment}
                 value={userInputValue}>
             </textarea>
+            {/* Create button with an event handler that will call the handleSubmit function */}
             <button 
                 type="submit" 
                 className="share-button"
@@ -27,7 +28,5 @@ const Form = ({ handleMoment, userInputValue, submitPost }) => {
         </form>
     )
 }
-
-// Add an event handler on the form submit button which calls the function in App.js that prevents default, pushes user input value to Firebase, and clears the form input
 
 export default Form;

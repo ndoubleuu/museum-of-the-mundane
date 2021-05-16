@@ -1,8 +1,5 @@
 import { Fragment } from 'react';
-
-// Create button to remove input values
-        // Add an event handler on the remove button which will call the function that removes the input from the Firebase database
-
+        
 const Gallery = ({ momentsData, removePost }) => {
     return (
         <Fragment>
@@ -15,7 +12,9 @@ const Gallery = ({ momentsData, removePost }) => {
                 return(
                     <li key={ moment.key }>
                         <p>{ moment.post }</p>
+                        {/* Create button to remove input values */}
                         <button className="delete-input" onClick={() => {
+                            // Add an event handler on the remove button which will call the function that removes the input from the Firebase database
                             removePost(moment.key);
                         }}>
                             <span className="sr-only">Delete post</span>

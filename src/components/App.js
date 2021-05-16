@@ -6,9 +6,10 @@ import "../styles/App.css";
 // Import Firebase
 import firebase from "../config/firebase.js";
 // Import components
-import Header from "./Header";
-import Form from "./Form";
-import Gallery from "./Gallery";
+import Header from "./Header.js";
+import Description from "./Description.js";
+import Form from "./Form.js";
+import Gallery from "./Gallery.js";
 
 // Store reference to Firebase database in a variable
 const dbRef = firebase.database().ref();
@@ -70,18 +71,11 @@ function App() {
       <Header />
 
       <main>
-          <div className="wrapper">
-
+        <div className="wrapper">
           <section>
-            <div className="description">
-                <p>From the smell of freshly brewed coffee in the morning, to the wildflowers blooming right outside your door...</p>
-                <p>There is beauty in everyday life.</p> 
-                <p>We’d love to hear about the little joyful things in your life. Add to our curated collection of everyday happy instances.</p>  
-            </div>
-
+            <Description />
             <Form handleMoment={handleUserInput} userInputValue={userInput} submitPost={handleSubmit} />
           </section>
-
           <Gallery momentsData={moments} removePost={handleRemove} />
         </div>
       </main>
