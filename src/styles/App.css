@@ -255,12 +255,8 @@ a:hover {
 }
 
 /* HEADER */
-header {
-  padding-top: 3rem;
-}
-
 .top-container {
-  height: 22rem;
+  height: 25rem;
   border-right: 1px solid black;
 }
 
@@ -268,7 +264,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding-right: 2rem;
+  padding: 3rem 5rem 0;
 }
 
 h1 {
@@ -323,14 +319,13 @@ header a:hover {
 
 .image {
   width: 100%;
-  height: 37.7rem;
   opacity: 80%;
 }
 
 /* Main- DESCRIPTION */
 main section {
   display: flex;
-  margin: 0 0 3rem;
+  margin: -0.5rem 0 3rem;
 }
 
 .description {
@@ -398,7 +393,7 @@ textarea {
 /* GALLERY */
 ul {
   list-style: none;
-  padding: 0;
+  padding: 3rem 0;
   font-family: "Playfair Display", serif;
   display: flex;
   justify-content: space-between;
@@ -413,7 +408,7 @@ li {
   flex-basis: 35rem;
   height: 30rem;
   padding: 8rem;
-  margin: 5rem 0;
+  margin: 3rem 0;
   position: relative;
 }
 
