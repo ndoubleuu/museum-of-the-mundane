@@ -312,7 +312,7 @@ header i {
 /* Main- DESCRIPTION */
 main section {
   display: flex;
-  margin: 0 0 7rem;
+  margin: 0 0 3rem;
 }
 
 .description {
@@ -329,7 +329,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 35rem 3rem 5rem;
+  padding: 35rem 3rem 3rem;
   border-bottom: 0.25rem solid #000;
   border-left: 0.1rem solid #000;
 }
