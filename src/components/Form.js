@@ -1,7 +1,7 @@
 const Form = ({ handleMoment, userInputValue, submitPost }) => {
     return (
         // Create a form with an input and submit button that will allow users to enter their "happy instance"
-        <form action="submit">
+        <form action="submit" id="form">
             <label htmlFor="input" className="sr-only">
                 Enter your day's happy instance here.
             </label>
