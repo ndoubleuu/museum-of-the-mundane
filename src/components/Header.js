@@ -5,6 +5,7 @@ const Header = () => {
     return(
         <header>
             <div className="wrapper">
+                {/* <p><q>Life is a passage through a museum of beauty.</q> -Robert Genn</p> */}
                 <h1>Museum of the <span>Mundane</span></h1>
             </div>
             <div className="wrapper image">
