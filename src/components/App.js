@@ -10,7 +10,7 @@ import Header from "./Header";
 import Form from "./Form";
 import Gallery from "./Gallery";
 
-// Store call to Firebase database in a variable
+// Store reference to Firebase database in a variable
 const dbRef = firebase.database().ref();
 
 function App() {
@@ -19,8 +19,6 @@ function App() {
   const [ userInput, setUserInput ] = useState("");
 
   useEffect(() => {
-    console.log('I am being called from useEffect hook!');
-
     // Listen for a value and respond to value
     dbRef.on("value", (response) => {
       // Initialize empty array
@@ -46,8 +44,18 @@ function App() {
     })
   }, []);
 
-  const handleUserInput = () => {
-    console.log("This is coming from handle user input function");
+  const handleUserInput = (event) => {
+    let inputValue = event.target.value;
+    // Update state to the input value
+    setUserInput(inputValue);
+  }
+
+  // Submitting data to Firebase
+  const handleSubmit = () => {
+    // Submit new post to the page
+    dbRef.push(userInput);
+    // Reset value input
+    setUserInput("");
   }
 
   return (
@@ -66,7 +74,7 @@ function App() {
                 <p>We’d love to hear about the little joyful things in your life. Add to our curated collection of everyday happy instances.</p>  
             </div>
 
-            <Form handleMoment={handleUserInput} />
+            <Form handleMoment={handleUserInput} userInputValue={userInput} submitPost={handleSubmit} />
           </section>
 
           <Gallery momentsData={moments} />

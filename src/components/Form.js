@@ -1,4 +1,4 @@
-const Form = (props) => {
+const Form = ({ handleMoment, userInputValue, submitPost }) => {
     return (
         // Create a form with an input and submit button that will allow users to enter their "happy instance"
         <form className="wrapper" action="submit">
@@ -12,9 +12,18 @@ const Form = (props) => {
                 rows="3" 
                 cols="50" 
                 placeholder="What made you smile today?" 
-                onChange={props.handleMoment}>
+                onChange={handleMoment}
+                value={userInputValue}>
             </textarea>
-            <button type="submit" className="share-button">Share your moment</button>
+            <button 
+                type="submit" 
+                className="share-button"
+                onClick={(event) => {
+                    event.preventDefault();
+                    submitPost();
+                }}>
+                Share your moment
+            </button>
         </form>
     )
 }
