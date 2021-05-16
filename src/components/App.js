@@ -56,7 +56,6 @@ function App() {
     // Error handling- 
       // if input is an empty string, alert user; if input is not empty, submit the new post and display it on the page 
     {userInput ? dbRef.push(userInput) : alert('not ok')}
-    
     // Reset value input
     setUserInput("");
   }
