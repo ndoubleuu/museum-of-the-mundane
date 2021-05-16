@@ -1,4 +1,5 @@
-import { Fragment } from 'react';
+import { Fragment } from "react";
+import frame from "../assets/frame.png";
         
 const Gallery = ({ momentsData, removePost }) => {
     return (
@@ -11,6 +12,7 @@ const Gallery = ({ momentsData, removePost }) => {
                 // console.log(moment);
                 return(
                     <li key={ moment.key }>
+                        <img src={frame} alt="" className="frame"/>
                         <p>{ moment.post }</p>
                         {/* Create button to remove input values */}
                         <button className="delete-input" onClick={() => {

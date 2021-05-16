@@ -1,16 +1,16 @@
 const Form = ({ handleMoment, userInputValue, submitPost }) => {
     return (
         // Create a form with an input and submit button that will allow users to enter their "happy instance"
-        <form className="wrapper" action="submit">
+        <form action="submit">
             <label htmlFor="input" className="sr-only">
                 Enter your day's happy instance here.
             </label>
             <textarea 
                 id="input" 
                 name="input" 
-                maxLength="250" 
-                rows="3" 
-                cols="50" 
+                maxLength="100" 
+                rows="1" 
+                cols="60" 
                 placeholder="What made you smile today?" 
                 onChange={handleMoment}
                 value={userInputValue}>
