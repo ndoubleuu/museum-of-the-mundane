@@ -50,12 +50,17 @@ function App() {
     setUserInput(inputValue);
   }
 
-  // Submitting data to Firebase
+  // Define a function that will submit user's input to Firebase
   const handleSubmit = () => {
     // Submit new post to the page
     dbRef.push(userInput);
     // Reset value input
     setUserInput("");
+  }
+
+  // Define a function that will remove user inputs from the database and page
+  const handleRemove = (moment) => {
+    dbRef.child(moment).remove();
   }
 
   return (
@@ -77,12 +82,12 @@ function App() {
             <Form handleMoment={handleUserInput} userInputValue={userInput} submitPost={handleSubmit} />
           </section>
 
-          <Gallery momentsData={moments} />
+          <Gallery momentsData={moments} removePost={handleRemove} />
         </div>
       </main>
 
       <footer>
-        Created by <a href="https://nicodewu.com/">Nicole Wu</a> at <a href="https://junocollege.com/">Juno College</a>, 2021. Image by Artur Matosyan, from <a href="">Unsplash</a>. 
+        Created by <a href="https://nicodewu.com/">Nicole Wu</a> at <a href="https://junocollege.com/">Juno College</a>, 2021. Image by <a href="https://unsplash.com/@artmatters">Artur Matosyan</a>, from <a href="https://unsplash.com/">Unsplash</a>. 
       </footer>
     
     </Fragment>
