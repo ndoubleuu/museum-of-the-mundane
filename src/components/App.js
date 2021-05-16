@@ -18,6 +18,7 @@ function App() {
   // Create state object to hold user input values
   const [ moments, setMoments ] = useState([]);
   const [ userInput, setUserInput ] = useState("");
+  const [ errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     // Listen for a value and respond to value
@@ -51,13 +52,24 @@ function App() {
     setUserInput(inputValue);
   }
 
+  // Define a function that pushes the user's post to database and clears the error message which will be called int he handleSubmit function when the input is NOT an empty string
+  const acceptSubmit = () => {
+    dbRef.push(userInput);
+    setErrorMessage("");
+  }
+
   // Define a function that will submit user's input to Firebase
   const handleSubmit = () => {
     // Error handling- 
       // if input is an empty string, alert user; if input is not empty, submit the new post and display it on the page 
-    {userInput ? dbRef.push(userInput) : alert('not ok')}
+    userInput ? acceptSubmit() : handleError()
     // Reset value input
     setUserInput("");
+  }
+
+  const handleError = () => {
+    console.log('hi');
+    setErrorMessage("Don't forget to write a happy instance.");
   }
 
   // Define a function that will remove user inputs from the database and page
@@ -74,7 +86,7 @@ function App() {
         <div className="wrapper">
           <section>
             <Description />
-            <Form handleMoment={handleUserInput} userInputValue={userInput} submitPost={handleSubmit} />
+            <Form handleMoment={handleUserInput} userInputValue={userInput} submitPost={handleSubmit} errorHandle={errorMessage} />
           </section>
           <Gallery momentsData={moments} removePost={handleRemove} />
         </div>

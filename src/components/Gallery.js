@@ -1,7 +1,14 @@
 import { Fragment } from "react";
+// Import frame image
 import frame from "../assets/frame.png";
+// Import Fontawesome icon
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
         
-const Gallery = ({ momentsData, removePost }) => {
+const Gallery = (props) => {
+    // Destructure props
+    const { momentsData, removePost } = props;
+
     return (
         <Fragment>
             {/* // Create a <ul> to hold all submitted user input values */}
@@ -20,7 +27,7 @@ const Gallery = ({ momentsData, removePost }) => {
                             removePost(moment.key);
                         }}>
                             <span className="sr-only">Delete post</span>
-                            <i className="far fa-times-circle"></i>
+                            <FontAwesomeIcon icon={faTimesCircle} />
                         </button>
                     </li>  
                 )

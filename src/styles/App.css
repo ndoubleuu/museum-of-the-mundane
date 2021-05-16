@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap");
+
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -297,7 +299,7 @@ header a:hover {
   color: rgb(80, 80, 80);
 }
 
-header i {
+.arrow-down {
   animation: bounce 5s infinite;
 }
 
@@ -334,6 +336,12 @@ main section {
 }
 
 /* Main- FORM */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -369,6 +377,14 @@ textarea {
   background-color: #fff;
   border: 1px solid #000;
   color: #000;
+  font-style: italic;
+}
+
+.submit-error {
+  position: absolute;
+  bottom: 2.3rem;
+  left: 3.2rem;
+  font-weight: bold;
   font-style: italic;
 }
 
