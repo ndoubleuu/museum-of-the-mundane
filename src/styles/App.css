@@ -416,7 +416,7 @@ li {
   opacity: 75%;
 }
 
-button.delete-input {
+.delete-input {
   background: transparent;
   border: none;
   padding: 0.5rem;
