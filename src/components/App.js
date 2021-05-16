@@ -65,7 +65,6 @@ function App() {
   }
 
   return (
-    // Return a parent container which will hold the different sections of the page 
     <Fragment>
 
       <Header />

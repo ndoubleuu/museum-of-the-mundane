@@ -234,7 +234,7 @@ body {
 
 .wrapper {
   max-width: 1440px;
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -260,6 +260,7 @@ header .wrapper {
 h1 {
   font-family: "Playfair Display", serif;
   font-size: 8rem;
+  font-weight: normal;
   line-height: 7rem;
   text-transform: uppercase;
   width: 60rem;
@@ -289,7 +290,11 @@ form {
   flex-direction: column;
   align-items: flex-end;
   padding: 5rem 3rem;
-  border: 0.1rem solid #000;
+  border: 0.1rem dashed #000;
+}
+
+::placeholder {
+  font-style: italic;
 }
 
 textarea {
@@ -325,12 +330,12 @@ ul {
 }
 
 li {
-  width: 40rem;
-  height: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-basis: 35rem;
+  height: 30rem;
   padding: 8rem;
   margin: 5rem 0;
   position: relative;
@@ -346,8 +351,8 @@ button.delete-input {
   border: none;
   padding: 0.5rem;
   position: absolute;
-  top: 5rem;
-  right: 5.5rem;
+  top: 6.5rem;
+  right: 5.2rem;
 }
 
 .delete-input {
@@ -356,7 +361,7 @@ button.delete-input {
 
 .delete-input:hover {
   cursor: pointer;
-  color: #cd5c5c;
+  color: #912424;
 }
 
 /* FOOTER */
