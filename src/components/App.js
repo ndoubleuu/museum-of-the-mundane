@@ -34,14 +34,15 @@ function App() {
         // console.log(data[key]);
         
         // Store the data in objects (with a key and the user's input value)
-        let momentObject = { key: key, moment: data[key] }
+        let momentObject = { key: key, post: data[key] }
         console.log(momentObject);
 
         // Push the new objects to the database
-        newDataArray.push(momentObject);
-
-        setMoments(newDataArray);
+        newDataArray.push(momentObject);  
       }
+
+      // Update state with new data array
+      setMoments(newDataArray);
     })
   }, []);
 
