@@ -53,10 +53,10 @@ function App() {
 
   // Define a function that will submit user's input to Firebase
   const handleSubmit = () => {
-    // Error handling- if nothing is submitted, alert the user
+    // Error handling- 
+      // if input is an empty string, alert user; if input is not empty, submit the new post and display it on the page 
     {userInput ? dbRef.push(userInput) : alert('not ok')}
-    // Submit new post to the page
-    // dbRef.push(userInput);
+    
     // Reset value input
     setUserInput("");
   }
