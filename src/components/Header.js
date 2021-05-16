@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Header = () => {
     return(
         <header>
-            <div className="wrapper">
+            <div className="wrapper top-container">
                 <div className="title">
                     <h1>Museum of the <span>Mundane</span></h1>
                     <h2>A community-curated collection</h2>
