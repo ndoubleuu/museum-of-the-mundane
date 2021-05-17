@@ -10,6 +10,7 @@ import Header from "./Header.js";
 import Description from "./Description.js";
 import Form from "./Form.js";
 import Gallery from "./Gallery.js";
+import Modal from "./Modal.js";
 
 // Store reference to Firebase database in a variable
 const dbRef = firebase.database().ref();
@@ -85,6 +86,7 @@ function App() {
           </section>
           <Gallery momentsData={moments} removePost={handleRemove} />
         </div>
+        <Modal />
       </main>
 
       <footer>

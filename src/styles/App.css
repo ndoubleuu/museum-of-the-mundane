@@ -117,8 +117,47 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
+}
+
+.share-button,
+.confirm-delete {
+  font-family: "Lato", sans-serif;
+  border: 0.1rem solid #fff;
+  color: #fff;
+  background: #000;
+  padding: 1rem 2rem;
+  margin-top: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.share-button:hover,
+.share-button:focus,
+.confirm-delete:hover,
+.confirm-delete:focus {
+  cursor: pointer;
+  background-color: #fff;
+  border: 0.1rem solid #000;
+  color: #000;
+  font-style: italic;
+}
+
+.delete-input,
+.exit-modal {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.delete-input:hover,
+.delete-input:focus,
+.exit-modal:hover,
+.exit-modal:focus {
+  cursor: pointer;
 }
 
 /* HEADER */
@@ -165,7 +204,8 @@ header a {
   transition: all 0.3s ease;
 }
 
-header a:hover {
+header a:hover,
+header a:focus {
   color: rgb(80, 80, 80);
 }
 
@@ -234,24 +274,6 @@ textarea {
   width: 60rem;
 }
 
-.share-button {
-  font-family: "Lato", sans-serif;
-  border: 0.1rem solid #fff;
-  color: #fff;
-  background: #000;
-  padding: 1rem 2rem;
-  margin-top: 2.5rem;
-  transition: all 0.3s ease;
-}
-
-.share-button:hover {
-  cursor: pointer;
-  background-color: #fff;
-  border: 0.1rem solid #000;
-  color: #000;
-  font-style: italic;
-}
-
 .submit-error {
   position: absolute;
   bottom: 2.3rem;
@@ -260,7 +282,7 @@ textarea {
   font-style: italic;
 }
 
-/* GALLERY */
+/* Main- GALLERY */
 ul {
   list-style: none;
   padding: 3rem 0;
@@ -289,21 +311,47 @@ li {
 }
 
 .delete-input {
-  background: transparent;
-  border: none;
-  padding: 0.5rem;
-  position: absolute;
   top: 6.5rem;
   right: 5.2rem;
 }
 
-.delete-input {
-  transition: all 0.3s ease;
+.delete-input:hover,
+.delete-input:focus {
+  color: #912424;
 }
 
-.delete-input:hover {
-  cursor: pointer;
-  color: #912424;
+/* Main- MODAL */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4.5rem 3rem 3rem;
+  position: relative;
+  background: #fff;
+}
+
+.exit-modal {
+  top: 1rem;
+  right: 1rem;
+}
+
+.show-modal {
+  display: block;
 }
 
 /* FOOTER */
