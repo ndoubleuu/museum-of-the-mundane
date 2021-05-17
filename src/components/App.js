@@ -15,7 +15,7 @@ import Gallery from "./Gallery.js";
 const dbRef = firebase.database().ref();
 
 function App() {
-  // Create state object to hold user input values
+  // Create state objects
   const [ moments, setMoments ] = useState([]);
   const [ userInput, setUserInput ] = useState("");
   const [ errorMessage, setErrorMessage ] = useState("");
