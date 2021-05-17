@@ -18,7 +18,7 @@ function App() {
   // Create state object to hold user input values
   const [ moments, setMoments ] = useState([]);
   const [ userInput, setUserInput ] = useState("");
-  const [ errorMessage, setErrorMessage] = useState("");
+  const [ errorMessage, setErrorMessage ] = useState("");
 
   useEffect(() => {
     // Listen for a value and respond to value
@@ -27,15 +27,11 @@ function App() {
       const newDataArray = [];
       // Store data from Firebase database in a variable
       const data = response.val();
-      // console.log(data);
 
       // Loop through the data
       for (let key in data) {
-        // console.log(data[key]);
-        
         // Store the data in objects (with a key and the user's input value)
         let momentObject = { key: key, post: data[key] }
-        // console.log(momentObject);
 
         // Push the new objects to the database
         newDataArray.push(momentObject);  
@@ -68,7 +64,6 @@ function App() {
   }
 
   const handleError = () => {
-    console.log('hi');
     setErrorMessage("Don't forget to write a happy instance.");
   }
 

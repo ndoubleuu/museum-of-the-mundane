@@ -16,7 +16,6 @@ const Gallery = (props) => {
             {
             momentsData.map((moment) => {
                 // Map through the array of user inputs to render each of them onto the page
-                // console.log(moment);
                 return(
                     <li key={ moment.key }>
                         <img src={frame} alt="" className="frame"/>
@@ -29,7 +28,7 @@ const Gallery = (props) => {
                             <span className="sr-only">Delete post</span>
                             <FontAwesomeIcon icon={faTimesCircle} aria-hidden="true" />
                         </button>
-                    </li>  
+                    </li>
                 )
                 
             })
