@@ -10,7 +10,7 @@ import Header from "./Header.js";
 import Description from "./Description.js";
 import Form from "./Form.js";
 import Gallery from "./Gallery.js";
-import Modal from "./Modal.js";
+// import Modal from "./Modal.js";
 
 // Store reference to Firebase database in a variable
 const dbRef = firebase.database().ref();
@@ -20,6 +20,8 @@ function App() {
   const [ moments, setMoments ] = useState([]);
   const [ userInput, setUserInput ] = useState("");
   const [ errorMessage, setErrorMessage ] = useState("");
+  const [ modalIsDisplayed, setModalDisplay ] = useState(false);
+  const [ selectedItem, setSelectedItem ] = useState(undefined);
 
   useEffect(() => {
     // Listen for a value and respond to value
@@ -69,7 +71,19 @@ function App() {
   }
 
   // Define a function that will remove user inputs from the database and page
-  const handleRemove = (moment) => {
+  // const handleRemove = (moment) => {
+  //   dbRef.child(moment).remove();
+  // }
+
+  //Define a function that will display modal
+  const displayModal = (moment) => {
+    setModalDisplay(true);
+    setSelectedItem(moment);
+  }
+
+  //Define a function that will hide modal AND delete the post
+  const confirmRemovePost = (moment) => {
+    setModalDisplay(false);
     dbRef.child(moment).remove();
   }
 
@@ -84,9 +98,9 @@ function App() {
             <Description />
             <Form handleMoment={handleUserInput} userInputValue={userInput} submitPost={handleSubmit} errorHandle={errorMessage} />
           </section>
-          <Gallery momentsData={moments} removePost={handleRemove} />
+          <Gallery momentsData={moments} confirmDelete={displayModal} showModal={modalIsDisplayed} removePost={confirmRemovePost} itemSelected={selectedItem} />
         </div>
-        <Modal />
+        {/* <Modal showModal={modalIsDisplayed} removePost={confirmRemovePost} /> */}
       </main>
 
       <footer>

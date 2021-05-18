@@ -332,7 +332,6 @@ li {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.25);
-  visibility: hidden;
 }
 
 .modal-content {
@@ -351,7 +350,11 @@ li {
 }
 
 .show-modal {
-  display: block;
+  visibility: visible;
+}
+
+.hide-modal {
+  visibility: hidden;
 }
 
 /* FOOTER */

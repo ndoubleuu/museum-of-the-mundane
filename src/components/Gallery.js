@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
         
 const Gallery = (props) => {
     // Destructure props
-    const { momentsData, removePost } = props;
+    const { momentsData, confirmDelete, showModal, removePost, itemSelected } = props;
 
     return (
         <Fragment>
@@ -17,20 +17,40 @@ const Gallery = (props) => {
             momentsData.map((moment) => {
                 // Map through the array of user inputs to render each of them onto the page
                 return(
-                    <li key={ moment.key }>
-                        <img src={frame} alt="" className="frame"/>
-                        <p>{ moment.post }</p>
-                        {/* Create button to remove input values */}
-                        <button className="delete-input" onClick={() => {
-                            // Add an event handler on the remove button which will call the function that removes the input from the Firebase database
-                            removePost(moment.key);
-                        }}>
-                            <span className="sr-only">Delete post</span>
-                            <FontAwesomeIcon icon={faTimesCircle} aria-hidden="true" />
-                        </button>
-                    </li>
+                    <Fragment key={ moment.key }>
+                        <li>
+                            <img src={frame} alt="" className="frame"/>
+                            <p>{ moment.post }</p>
+                            <button className="delete-input"
+                                onClick={() => {
+                                    confirmDelete(moment.key);
+                                }
+                                }> 
+                                <span className="sr-only">Delete post</span>
+                                <FontAwesomeIcon icon={faTimesCircle} aria-hidden="true" />
+                            </button>
+                        </li>
+                        <div className={showModal === true ? "show-modal" : "hide-modal"}>
+                            <div className="modal">
+                                <div className="modal-content">
+                                    <button className="exit-modal">
+                                        <span className="sr-only">Exit modal</span>
+                                        <FontAwesomeIcon icon={faTimesCircle} aria-hidden="true" />
+                                    </button>
+                                    <p>Are you sure you'd like to delete this input? This action cannot be undone.</p>
+                                    <button className="confirm-delete" 
+                                        onClick={ () => {
+                                            removePost(itemSelected);
+                                        }
+                                        }>
+                                            Confirm
+                                    </button>
+                                </div> 
+                            </div>
+                        </div>
+                    </Fragment>
+
                 )
-                
             })
             }
             </ul>
