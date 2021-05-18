@@ -349,14 +349,8 @@ li {
   right: 1rem;
 }
 
-.show-modal {
-  visibility: visible;
-  position: absolute;
-}
-
 .hide-modal {
-  visibility: hidden;
-  position: absolute;
+  display: none;
 }
 
 /* FOOTER */
