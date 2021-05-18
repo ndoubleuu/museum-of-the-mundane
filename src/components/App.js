@@ -10,7 +10,7 @@ import Header from "./Header.js";
 import Description from "./Description.js";
 import Form from "./Form.js";
 import Gallery from "./Gallery.js";
-// import Modal from "./Modal.js";
+import Modal from "./Modal.js";
 
 // Store reference to Firebase database in a variable
 const dbRef = firebase.database().ref();
@@ -70,18 +70,13 @@ function App() {
     setErrorMessage("Don't forget to write a happy instance.");
   }
 
-  // Define a function that will remove user inputs from the database and page
-  // const handleRemove = (moment) => {
-  //   dbRef.child(moment).remove();
-  // }
-
-  //Define a function that will display modal
+  // Define a function that will display modal
   const displayModal = (moment) => {
     setModalDisplay(true);
     setSelectedItem(moment);
   }
 
-  //Define a function that will hide modal AND delete the post
+  // Define a function that will hide modal AND delete the post
   const confirmRemovePost = (moment) => {
     setModalDisplay(false);
     dbRef.child(moment).remove();
@@ -91,6 +86,13 @@ function App() {
   const hideModal = () => {
     setModalDisplay(false);
   }
+
+  // How do you do this with React hooks though?
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setModalDisplay(false);
+    }
+  });
 
   return (
     <Fragment>
@@ -103,9 +105,9 @@ function App() {
             <Description />
             <Form handleMoment={handleUserInput} userInputValue={userInput} submitPost={handleSubmit} errorHandle={errorMessage} />
           </section>
-          <Gallery momentsData={moments} confirmDelete={displayModal} showModal={modalIsDisplayed} removePost={confirmRemovePost} itemSelected={selectedItem} exitModal={hideModal}/>
+          <Gallery momentsData={moments} confirmDelete={displayModal} />
         </div>
-        {/* <Modal showModal={modalIsDisplayed} removePost={confirmRemovePost} /> */}
+        <Modal showModal={modalIsDisplayed} exitModal={hideModal} removePost={confirmRemovePost} itemSelected={selectedItem} />
       </main>
 
       <footer>

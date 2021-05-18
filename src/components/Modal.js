@@ -2,18 +2,21 @@
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Modal = ({ showModal, removePost }) => {
+const Modal = ({ showModal, exitModal, removePost, itemSelected }) => {
     return (
         <div className={showModal === true ? "show-modal" : "hide-modal"}>
             <div className="modal">
                 <div className="modal-content">
-                    <button className="exit-modal">
+                    <button className="exit-modal" onClick={exitModal}>
                         <span className="sr-only">Exit modal</span>
                         <FontAwesomeIcon icon={faTimesCircle} aria-hidden="true" />
                     </button>
                     <p>Are you sure you'd like to delete this input? This action cannot be undone.</p>
                     <button className="confirm-delete" 
-                        onClick={removePost}>
+                        onClick={ () => {
+                            removePost(itemSelected);
+                            }
+                        }>
                             Confirm
                     </button>
                 </div> 
