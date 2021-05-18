@@ -383,9 +383,13 @@ footer {
     border-left: 0.1rem solid #000;
   }
   form {
-    padding-top: 35rem;
+    padding-top: 40rem;
     border: none;
     margin: 0 auto;
+  }
+  .submit-error {
+    left: 25rem;
+    bottom: 18rem;
   }
 }
 
@@ -415,12 +419,16 @@ footer {
     width: 100%;
   }
   form {
-    padding-top: 32rem;
     align-items: flex-start;
   }
   textarea {
     width: 60%;
     height: 15rem;
+  }
+  .submit-error {
+    left: 3rem;
+    bottom: 24rem;
+    width: 80%;
   }
 }
 
@@ -443,7 +451,10 @@ footer {
     padding: 0 2rem;
   }
   form {
-    padding-top: 35rem;
+    padding-top: 38rem;
+  }
+  .submit-error {
+    width: 100%;
   }
 }
 
@@ -458,13 +469,19 @@ footer {
     width: 20rem;
   }
   form {
-    padding-top: 40rem;
+    padding-top: 45rem;
     width: 100%;
   }
   textarea {
     width: 100%;
   }
+  .submit-error {
+    width: 70%;
+  }
   li {
+    font-size: 1.6rem;
+  }
+  .modal-content {
     font-size: 1.6rem;
   }
 }
@@ -474,10 +491,13 @@ footer {
     height: 30rem;
   }
   form {
-    padding-top: 45rem;
+    padding-top: 52rem;
   }
   textarea {
     height: 20rem;
+  }
+  .submit-error {
+    bottom: 31rem;
   }
   li {
     padding: 6rem;
