@@ -70,13 +70,13 @@ function App() {
     setErrorMessage("Don't forget to write a happy instance.");
   }
 
-  // Define a function that will display modal
+  // Define a function that will display modal and set selected item to moment.key (which is passed into the confirmDelete function Gallery.js)
   const displayModal = (moment) => {
     setModalDisplay(true);
     setSelectedItem(moment);
   }
 
-  // Define a function that will hide modal AND delete the post
+  // Define a function that will hide modal AND delete the post (selectedItem, which is now set to moment.key, will be passed in as an argument to this function in Modal.js)
   const confirmRemovePost = (moment) => {
     setModalDisplay(false);
     dbRef.child(moment).remove();

@@ -29,8 +29,3 @@ const Modal = (props) => {
 }
 
 export default Modal;
-
-// onClick={() => {
-//     // Add an event handler on the remove button which will call the function that removes the input from the Firebase database
-//     removePost(moment.key);
-// }}
