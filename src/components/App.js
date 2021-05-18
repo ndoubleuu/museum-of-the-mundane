@@ -53,12 +53,6 @@ function App() {
     setUserInput(inputValue);
   }
 
-  // Define a function that pushes the user's post to database and clears the error message which will be called int he handleSubmit function when the input is NOT an empty string
-  const acceptSubmit = () => {
-    dbRef.push(userInput);
-    setErrorMessage("");
-  }
-
   // Define a function that will submit user's input to Firebase
   const handleSubmit = () => {
     // Error handling- 
@@ -68,6 +62,13 @@ function App() {
     setUserInput("");
   }
 
+  // Define a function that pushes the user's post to database and clears the error message
+  const acceptSubmit = () => {
+    dbRef.push(userInput);
+    setErrorMessage("");
+  }
+
+  // Function that will display error message
   const handleError = () => {
     setErrorMessage("Don't forget to write a happy instance.");
   }
