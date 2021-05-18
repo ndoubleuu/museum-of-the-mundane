@@ -2,7 +2,10 @@
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Modal = ({ showModal, exitModal, removePost, itemSelected }) => {
+const Modal = (props) => {
+    // Destructure props
+    const { showModal, exitModal, removePost, itemSelected } = props;
+
     return (
         <div className={showModal === true ? "show-modal" : "hide-modal"}>
             <div className="modal">
