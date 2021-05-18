@@ -45,6 +45,8 @@ function App() {
     })
   }, []);
 
+
+  // Define a function which will save user's input within state
   const handleUserInput = (event) => {
     let inputValue = event.target.value;
     // Update state to the input value
