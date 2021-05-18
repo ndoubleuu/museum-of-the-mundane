@@ -21,7 +21,7 @@ function App() {
   const [ userInput, setUserInput ] = useState("");
   const [ errorMessage, setErrorMessage ] = useState("");
   const [ modalIsDisplayed, setModalDisplay ] = useState(false);
-  const [ selectedItem, setSelectedItem ] = useState(undefined);
+  const [ selectedItem, setSelectedItem ] = useState("");
 
   useEffect(() => {
     // Listen for a value and respond to value
