@@ -87,6 +87,11 @@ function App() {
     dbRef.child(moment).remove();
   }
 
+  // Define a function that will hide modal (when exit-modal button is clicked)
+  const hideModal = () => {
+    setModalDisplay(false);
+  }
+
   return (
     <Fragment>
 
@@ -98,7 +103,7 @@ function App() {
             <Description />
             <Form handleMoment={handleUserInput} userInputValue={userInput} submitPost={handleSubmit} errorHandle={errorMessage} />
           </section>
-          <Gallery momentsData={moments} confirmDelete={displayModal} showModal={modalIsDisplayed} removePost={confirmRemovePost} itemSelected={selectedItem} />
+          <Gallery momentsData={moments} confirmDelete={displayModal} showModal={modalIsDisplayed} removePost={confirmRemovePost} itemSelected={selectedItem} exitModal={hideModal}/>
         </div>
         {/* <Modal showModal={modalIsDisplayed} removePost={confirmRemovePost} /> */}
       </main>

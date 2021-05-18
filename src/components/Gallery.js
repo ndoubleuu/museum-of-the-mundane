@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
         
 const Gallery = (props) => {
     // Destructure props
-    const { momentsData, confirmDelete, showModal, removePost, itemSelected } = props;
+    const { momentsData, confirmDelete, showModal, removePost, itemSelected, exitModal } = props;
 
     return (
         <Fragment>
@@ -33,7 +33,7 @@ const Gallery = (props) => {
                         <div className={showModal === true ? "show-modal" : "hide-modal"}>
                             <div className="modal">
                                 <div className="modal-content">
-                                    <button className="exit-modal">
+                                    <button className="exit-modal" onClick={exitModal}>
                                         <span className="sr-only">Exit modal</span>
                                         <FontAwesomeIcon icon={faTimesCircle} aria-hidden="true" />
                                     </button>

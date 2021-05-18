@@ -351,10 +351,12 @@ li {
 
 .show-modal {
   visibility: visible;
+  position: absolute;
 }
 
 .hide-modal {
   visibility: hidden;
+  position: absolute;
 }
 
 /* FOOTER */
