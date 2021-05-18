@@ -14,7 +14,7 @@ const Modal = (props) => {
                         <span className="sr-only">Exit modal</span>
                         <FontAwesomeIcon icon={faTimesCircle} aria-hidden="true" />
                     </button>
-                    <p>Are you sure you'd like to delete this input? This action cannot be undone.</p>
+                    <p>Are you sure that you'd like to remove this post? This action cannot be undone.</p>
                     <button className="confirm-delete" 
                         onClick={ () => {
                             removePost(itemSelected);
