@@ -11,6 +11,7 @@ import Description from "./Description.js";
 import Form from "./Form.js";
 import Gallery from "./Gallery.js";
 import Modal from "./Modal.js";
+import Paintings from "./Paintings.js";
 
 // Store reference to Firebase database in a variable
 const dbRef = firebase.database().ref();
@@ -22,6 +23,7 @@ function App() {
   const [ errorMessage, setErrorMessage ] = useState("");
   const [ modalIsDisplayed, setModalDisplay ] = useState(false);
   const [ selectedItem, setSelectedItem ] = useState("");
+  const [ paintings, setPaintings ] = useState([]); 
 
   useEffect(() => {
     // Listen for a value and respond to value
@@ -45,6 +47,36 @@ function App() {
     })
   }, []);
 
+  useEffect(() => {
+    const url = new URL("https://api.unsplash.com/search/photos");
+
+    const searchParams = new URLSearchParams(
+      {
+        query: "painting art",
+        per_page: moments.length,
+        orientation: "landscape",
+        content_filter: "high",
+        client_id: 'jMtnqKPTKByXvos8bjg_QxEKv_CJRpzyUK82VWS3cNU'
+      }
+    ); 
+
+    url.search = searchParams;
+
+    fetch(url).then((response) => {
+      return response.json();
+    }).then((jsonResponse) => {
+      // console.log(jsonResponse);
+      const paintingsArray = jsonResponse.results.map((paintingObject) => {
+        return {
+          url: paintingObject.urls.regular,
+          altText: paintingObject.alt_description,
+          key: paintingObject.id
+        }
+      });
+      console.log(paintingsArray);
+      setPaintings(paintingsArray);
+    })
+  }, [moments]);
 
   // Define a function which will save user's input within state
   const handleUserInput = (event) => {
@@ -104,11 +136,14 @@ function App() {
 
       <main>
         <div className="wrapper">
-          <section>
+          <div className="section">
             <Description />
             <Form handleMoment={handleUserInput} userInputValue={userInput} submitPost={handleSubmit} errorHandle={errorMessage} />
-          </section>
-          <Gallery momentsData={moments} confirmDelete={displayModal} />
+          </div>
+          <div className="exhibit section">
+            <Gallery momentsData={moments} confirmDelete={displayModal} />
+            <Paintings paintingsData={paintings} />
+          </div>
         </div>
         <Modal showModal={modalIsDisplayed} exitModal={hideModal} removePost={confirmRemovePost} itemSelected={selectedItem} />
       </main>

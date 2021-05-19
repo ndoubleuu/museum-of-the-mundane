@@ -151,6 +151,7 @@ a:focus {
   padding: 0.5rem;
   position: absolute;
   transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .delete-input:hover,
@@ -231,7 +232,7 @@ header a:focus {
 }
 
 /* Main- DESCRIPTION */
-main section {
+main .section {
   display: flex;
   margin: -0.5rem 0 3rem;
 }
@@ -282,6 +283,11 @@ textarea {
   font-style: italic;
 }
 
+/* Main- EXHIBIT */
+.exhibit {
+  position: relative;
+}
+
 /* Main- GALLERY */
 ul {
   list-style: none;
@@ -304,6 +310,12 @@ li {
   position: relative;
 }
 
+.moments {
+  background: #fff;
+  text-align: center;
+  padding: 0.5rem;
+}
+
 .frame {
   position: absolute;
   padding: 1rem;
@@ -313,11 +325,26 @@ li {
 .delete-input {
   top: 6.5rem;
   right: 5.2rem;
+  font-size: 2.2rem;
 }
 
 .delete-input:hover,
 .delete-input:focus {
   color: #912424;
+}
+
+/* Main- PAINTINGS */
+.painting-container {
+  position: absolute;
+}
+
+.painting-container li {
+  z-index: -1;
+  padding: 4rem;
+}
+
+.painting-container img {
+  opacity: 0.55;
 }
 
 /* Main- MODAL */
@@ -363,7 +390,7 @@ footer {
 
 /* MEDIA QUERIES */
 @media (max-width: 1160px) {
-  main section {
+  main .section {
     flex-direction: column;
     position: relative;
   }

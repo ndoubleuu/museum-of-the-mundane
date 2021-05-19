@@ -4,6 +4,7 @@ import frame from "../assets/frame.png";
 // Import Fontawesome icon
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
         
 const Gallery = (props) => {
     // Destructure props
@@ -17,9 +18,9 @@ const Gallery = (props) => {
             momentsData.map((moment) => {
                 // Map through the array of user inputs to render each of them onto the page
                 return(
-                    <li key={ moment.key }>
+                    <li key={ moment.key } >
                         <img src={frame} alt="" className="frame"/>
-                        <p>{ moment.post }</p>
+                        <p className="moments">{ moment.post }</p>
                         <button className="delete-input"
                             onClick={() => {
                                 confirmDelete(moment.key);

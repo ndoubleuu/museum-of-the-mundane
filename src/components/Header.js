@@ -13,7 +13,7 @@ const Header = () => {
                     <h2>A community-curated collection</h2>
                 </div>
                 <a href="#share">
-                    <span className="sr-only">Scroll down to post submission form.</span>
+                    <span className="sr-only">Scroll down to the post submission form.</span>
                     <FontAwesomeIcon icon={faCaretDown} className="arrow-down" aria-hidden="true"/>
                 </a>
             </div>
