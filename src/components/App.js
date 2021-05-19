@@ -147,7 +147,7 @@ function App() {
       </main>
 
       <footer>
-        Created by <a href="https://nicodewu.com/">Nicole Wu</a> at <a href="https://junocollege.com/">Juno College</a>, 2021. Header image by <a href="https://unsplash.com/@artmatters">Artur Matosyan</a>. All images provided by the <a href="https://unsplash.com/developers">Unsplash API</a>.
+        Created by <a href="https://nicodewu.com/">Nicole Wu</a> at <a href="https://junocollege.com/">Juno College</a>, 2021. Header image by <a href="https://unsplash.com/@artmatters">Artur Matosyan</a>. All images provided by <a href="https://unsplash.com/">Unsplash</a>.
       </footer>
     
     </Fragment>
