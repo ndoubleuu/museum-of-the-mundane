@@ -12,7 +12,7 @@ const Form = (props) => {
                 <textarea 
                     id="input" 
                     name="input" 
-                    maxLength="100" 
+                    maxLength="90"
                     placeholder="What made you smile today?" 
                     onChange={handleMoment}
                     value={userInputValue}>
