@@ -65,7 +65,6 @@ function App() {
     fetch(url).then((response) => {
       return response.json();
     }).then((jsonResponse) => {
-      // console.log(jsonResponse);
       const paintingsArray = jsonResponse.results.map((paintingObject) => {
         return {
           url: paintingObject.urls.regular,
@@ -73,7 +72,6 @@ function App() {
           key: paintingObject.id
         }
       });
-      console.log(paintingsArray);
       setPaintings(paintingsArray);
     })
   }, [moments]);

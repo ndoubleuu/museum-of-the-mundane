@@ -1,6 +1,6 @@
 // Import Fontawesome icon
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Modal = (props) => {
     // Destructure props
