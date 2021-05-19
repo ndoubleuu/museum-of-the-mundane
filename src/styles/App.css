@@ -281,6 +281,7 @@ textarea {
   left: 3.2rem;
   font-weight: bold;
   font-style: italic;
+  width: 60%;
 }
 
 /* Main- EXHIBIT */
@@ -414,8 +415,9 @@ footer {
     margin: 0 auto;
   }
   .submit-error {
-    left: 25rem;
-    bottom: 20rem;
+    left: 22rem;
+    bottom: 18rem;
+    width: 80%;
   }
 }
 
@@ -454,7 +456,6 @@ footer {
   .submit-error {
     left: 3rem;
     bottom: 24rem;
-    width: 80%;
   }
 }
 
@@ -477,10 +478,10 @@ footer {
     padding: 0 2rem;
   }
   form {
-    padding-top: 38rem;
+    padding-top: 41rem;
   }
   .submit-error {
-    width: 100%;
+    width: 95%;
   }
 }
 
@@ -500,14 +501,14 @@ footer {
     left: 1.5rem;
   }
   form {
-    padding-top: 45rem;
+    padding-top: 48rem;
     width: 100%;
   }
   textarea {
     width: 100%;
   }
   .submit-error {
-    width: 70%;
+    width: 75%;
   }
   li {
     font-size: 1.6rem;
@@ -525,7 +526,7 @@ footer {
     height: 18rem;
   }
   .submit-error {
-    bottom: 31rem;
+    bottom: 27rem;
   }
   li {
     padding: 6rem;

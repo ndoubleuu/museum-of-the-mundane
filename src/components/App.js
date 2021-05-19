@@ -100,7 +100,7 @@ function App() {
 
   // Function that will display error message
   const handleError = () => {
-    setErrorMessage("Don't forget to write a happy instance.");
+    setErrorMessage("Don't forget to write about a happy instance.");
   }
 
   // Define a function that will display modal and set selected item to moment.key (which is passed into the confirmDelete function Gallery.js)
