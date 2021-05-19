@@ -146,6 +146,7 @@ a:focus {
 
 .delete-input,
 .exit-modal {
+  font-size: 2.2rem;
   background: transparent;
   border: none;
   padding: 0.5rem;
@@ -326,7 +327,6 @@ li {
 .delete-input {
   top: 0.5rem;
   right: -1rem;
-  font-size: 2.2rem;
 }
 
 .delete-input:hover,
@@ -367,6 +367,7 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 4.5rem 3rem 3rem;
   position: relative;
   background: #fff;
@@ -515,6 +516,9 @@ footer {
   }
   .modal-content {
     font-size: 1.6rem;
+  }
+  .exit-modal {
+    font-size: 2.5rem;
   }
 }
 
