@@ -227,13 +227,13 @@ header a:focus {
   }
 }
 
-.image {
+.image-container {
   width: 100%;
   opacity: 0.8;
 }
 
 /* Main- DESCRIPTION */
-main .section {
+.section {
   display: flex;
   margin: -0.5rem 0 3rem;
 }
@@ -392,12 +392,12 @@ footer {
   text-align: center;
   font-style: italic;
   font-size: 1.6rem;
-  padding: 8rem 2rem 1rem;
+  padding: 5rem 2rem 2rem;
 }
 
 /* MEDIA QUERIES */
 @media (max-width: 1160px) {
-  main .section {
+  .section {
     flex-direction: column;
     position: relative;
   }

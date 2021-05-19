@@ -25,11 +25,12 @@ function App() {
   const [ selectedItem, setSelectedItem ] = useState("");
   const [ paintings, setPaintings ] = useState([]); 
 
+  // useEffect hook for form submissions 
   useEffect(() => {
-    // Listen for a value and respond to value
+    // Listen for a value and respond to the value
     dbRef.on("value", (response) => {
       // Initialize empty array
-      const newDataArray = [];
+      const momentsArray = [];
       // Store data from Firebase database in a variable
       const data = response.val();
 
@@ -39,15 +40,17 @@ function App() {
         let momentObject = { key: key, post: data[key] }
 
         // Push the new objects to the database
-        newDataArray.push(momentObject);  
+        momentsArray.push(momentObject);  
       }
 
       // Update state with new data array
-      setMoments(newDataArray);
+      setMoments(momentsArray);
     })
   }, []);
 
+  // useEffect hook for Unsplash API call
   useEffect(() => {
+    // Store base URL in a variable
     const url = new URL("https://api.unsplash.com/search/photos");
 
     const searchParams = new URLSearchParams(
@@ -65,16 +68,28 @@ function App() {
     fetch(url).then((response) => {
       return response.json();
     }).then((jsonResponse) => {
+      // Map through the data to return a new array of objects with only the image url and the image id
       const paintingsArray = jsonResponse.results.map((paintingObject) => {
         return {
           url: paintingObject.urls.regular,
-          altText: paintingObject.alt_description,
           key: paintingObject.id
         }
       });
+      
+      // Update paintings state with new array
       setPaintings(paintingsArray);
-    })
+    });
+    // Dependencies array- request data from the API again whenever the moments state is updated (i.e. when a new "moment"/post is added to or removed from the momentsArray)
   }, [moments]);
+
+  // useEffect hook for event listener which closes modal when user presses esc key
+  useEffect(() => {
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        setModalDisplay(false);
+      }
+    });
+  }, []);
 
   // Define a function which will save user's input within state
   const handleUserInput = (event) => {
@@ -115,17 +130,10 @@ function App() {
     dbRef.child(moment).remove();
   }
 
-  // Define a function that will hide modal (when exit-modal button is clicked)
+  // Define a function that will hide modal when exit-modal button is clicked
   const hideModal = () => {
     setModalDisplay(false);
   }
-
-  // How do you do this with React hooks though?
-  window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      setModalDisplay(false);
-    }
-  });
 
   return (
     <Fragment>
@@ -134,6 +142,7 @@ function App() {
 
       <main>
         <div className="wrapper">
+
           <div className="section">
             <Description />
             <Form handleMoment={handleUserInput} userInputValue={userInput} submitPost={handleSubmit} errorHandle={errorMessage} />
@@ -142,7 +151,9 @@ function App() {
             <Gallery momentsData={moments} confirmDelete={displayModal} />
             <Paintings paintingsData={paintings} />
           </div>
+
         </div>
+
         <Modal showModal={modalIsDisplayed} exitModal={hideModal} removePost={confirmRemovePost} itemSelected={selectedItem} />
       </main>
 

@@ -17,7 +17,7 @@ const Header = () => {
                     <FontAwesomeIcon icon={faCaretDown} className="arrow-down" aria-hidden="true"/>
                 </a>
             </div>
-            <div className="wrapper image">
+            <div className="wrapper image-container">
                 <img src={museum} alt="Museum gallery exhibiting numerous framed paintings. Photographed by Artur Matosyan, published 2019." />
             </div>
         </header>
