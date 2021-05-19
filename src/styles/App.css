@@ -207,7 +207,7 @@ header a {
 
 header a:hover,
 header a:focus {
-  color: rgb(80, 80, 80);
+  color: #505050;
 }
 
 .arrow-down {
@@ -358,7 +358,7 @@ li {
   z-index: 10;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: #00000080;
 }
 
 .modal-content {
@@ -374,6 +374,11 @@ li {
 .exit-modal {
   top: 1rem;
   right: 1rem;
+}
+
+.exit-modal:hover,
+.exit-modal:focus {
+  color: #505050;
 }
 
 .hide-modal {
