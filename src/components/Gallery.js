@@ -18,9 +18,9 @@ const Gallery = (props) => {
             momentsData.map((moment) => {
                 // Map through the array of user inputs to render each of them onto the page
                 return(
-                    <li key={ moment.key } >
+                    <li key={moment.key}>
                         <img src={frame} alt="" className="frame"/>
-                        <p className="moments">{ moment.post }</p>
+                        <p className="moments">{moment.post}</p>
                         <button className="delete-input"
                             onClick={() => {
                                 confirmDelete(moment.key);

@@ -1,5 +1,5 @@
 // Imports from React
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Fragment } from "react";
 // Import styles
 import "../styles/App.css";
@@ -17,13 +17,16 @@ import Paintings from "./Paintings.js";
 const dbRef = firebase.database().ref();
 
 function App() {
-  // Create state objects
+  // Initialize state
   const [ moments, setMoments ] = useState([]);
   const [ userInput, setUserInput ] = useState("");
   const [ errorMessage, setErrorMessage ] = useState("");
   const [ modalIsDisplayed, setModalDisplay ] = useState(false);
   const [ selectedItem, setSelectedItem ] = useState("");
   const [ paintings, setPaintings ] = useState([]); 
+
+  // Store reference in a variable
+  const bottomRef = useRef();
 
   // useEffect hook for form submissions 
   useEffect(() => {
@@ -79,7 +82,7 @@ function App() {
       // Update paintings state with new array
       setPaintings(paintingsArray);
     });
-    // Dependencies array- make call to API again whenever the moments state is updated (i.e. when a new "moment"/post is added to or removed from the momentsArray, update amount of images returned accordingly)
+    // Dependencies array- make a call to the API again whenever the moments state is updated (i.e. when a new "moment"/post is added to or removed from the momentsArray, update amount of images returned accordingly)
   }, [moments]);
 
   // useEffect hook for event listener which closes modal when user presses esc key
@@ -107,10 +110,16 @@ function App() {
     setUserInput("");
   }
 
-  // Define a function that pushes the user's post to database and clears the error message
+  // Define a function that pushes the user's post to database, scrolls to the bottom of the gallery, and clears the error message
   const acceptSubmit = () => {
     dbRef.push(userInput);
+    scrollToBottom();
     setErrorMessage("");
+  }
+
+  // Define a function that will scroll to the bottom of the page to see the newly submitted post
+  const scrollToBottom = () => {
+    bottomRef.current.scrollIntoView({ behavior: "smooth" });
   }
 
   // Function that will display error message
@@ -157,7 +166,7 @@ function App() {
         <Modal showModal={modalIsDisplayed} exitModal={hideModal} removePost={confirmRemovePost} itemSelected={selectedItem} />
       </main>
 
-      <footer>
+      <footer ref={bottomRef}>
         Created by <a href="https://nicodewu.com/">Nicole Wu</a> at <a href="https://junocollege.com/">Juno College</a>, 2021. Header image by <a href="https://unsplash.com/@artmatters">Artur Matosyan</a>. All images provided by <a href="https://unsplash.com/">Unsplash</a>.
       </footer>
     

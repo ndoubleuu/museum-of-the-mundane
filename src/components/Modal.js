@@ -7,7 +7,7 @@ const Modal = (props) => {
     const { showModal, exitModal, removePost, itemSelected } = props;
 
     return (
-        <div className={showModal ? null : "hide-modal"}>
+        <div className={showModal ? null : "hide"}>
             <div className="modal">
                 <div className="modal-content">
                     <button className="exit-modal" onClick={exitModal}>
