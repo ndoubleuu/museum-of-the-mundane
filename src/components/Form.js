@@ -27,10 +27,9 @@ const Form = (props) => {
                     }}>
                     Share your moment
                 </button>
+                <p className="submit-error">{errorHandle}</p>
             </form>
-            <p className="submit-error">{errorHandle}</p>
         </div>
-        
     )
 }
 
