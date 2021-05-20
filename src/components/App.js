@@ -79,7 +79,7 @@ function App() {
       // Update paintings state with new array
       setPaintings(paintingsArray);
     });
-    // Dependencies array- request data from the API again whenever the moments state is updated (i.e. when a new "moment"/post is added to or removed from the momentsArray)
+    // Dependencies array- make call to API again whenever the moments state is updated (i.e. when a new "moment"/post is added to or removed from the momentsArray, update amount of images returned accordingly)
   }, [moments]);
 
   // useEffect hook for event listener which closes modal when user presses esc key
