@@ -290,6 +290,10 @@ textarea {
   position: relative;
 }
 
+.gallery {
+  width: 100%;
+}
+
 /* Main- GALLERY */
 ul {
   list-style: none;

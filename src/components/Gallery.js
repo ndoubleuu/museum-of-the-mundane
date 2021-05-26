@@ -13,7 +13,7 @@ const Gallery = (props) => {
     return (
         <Fragment>
             {/* // Create a <ul> to hold all submitted user input values */}
-            <ul>
+            <ul className="gallery">
             {
             momentsData.map((moment) => {
                 // Map through the array of user inputs to render each of them onto the page
@@ -25,7 +25,7 @@ const Gallery = (props) => {
                             onClick={() => {
                                 confirmDelete(moment.key);
                             }
-                            }> 
+                        }> 
                             <span className="sr-only">Delete post</span>
                             <FontAwesomeIcon icon={faTimesCircle} aria-hidden="true" />
                         </button>
